@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="Endpne.LibMPV.Windows" Version="0.41.0" GeneratePathProperty="true" />
+    <PackageReference Include="HanumanInstitute.LibMpv" Version="0.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(PkgEndpne_LibMPV_Windows)\build\x64\libmpv-2.dll">
+      <Link>libmpv\win-x64\libmpv-2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(PkgEndpne_LibMPV_Windows)\build\x64\libmpv-2.dll">
+      <Link>libmpv\win-x64\libmpv.2.dll</Link>
+      <TargetPath>libmpv\win-x64\libmpv.2.dll</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
